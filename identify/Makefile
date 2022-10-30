@@ -10,7 +10,7 @@ DEPS =
 OBJS = identify.o
 
 %.o: %.c
-	$(CC) -c -o $@ $< $(CFLAGS)
+	$(CC) -fPIC -c -o $@ $< $(CFLAGS)
 
 all: $(OBJS)
 

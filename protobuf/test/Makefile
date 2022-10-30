@@ -5,10 +5,10 @@ DEPS = ../protobuf.h
 OBJS = testit.o ../protobuf.o ../varint.o Test1_protobuf.o Test2_protobuf.o Test3_protobuf.o
 
 %.o: %.c $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS)
+	$(CC) -fPIC -c -o $@ $< $(CFLAGS)
 
 test_protobuf: $(OBJS)
-	$(CC) -o $@ $^ $(LFLAGS)
+	$(CC) -fPIC -o $@ $^ $(LFLAGS)
 
 all: test_protobuf
 

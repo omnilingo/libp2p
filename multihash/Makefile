@@ -26,7 +26,7 @@ SRCS = src/hashes.c src/errors.c src/multihash.c
 OBJS = $(SRCS:.c=.o)
 
 src/%.o: src/%.c
-	$(CC) $(CFLAGS) -c -I include $< -o $@
+	$(CC) -fPIC $(CFLAGS) -c -I include $< -o $@
 
 all: $(TARGET_LIB)
 
@@ -50,10 +50,10 @@ test: $(TEST_BINS)
 	exit $$ERROR
 
 tests/c/test_%.o: tests/c/test_%.c tests/c/minunit.h
-	$(CC) $(CFLAGS) -c -I include $< -o $@
+	$(CC) -fPIC $(CFLAGS) -c -I include $< -o $@
 
 tests/c/test_%: tests/c/test_%.o $(TARGET_LIB)
-	$(CC) $(LDFLAGS) $^ -o $@
+	$(CC) -fPIC $(LDFLAGS) $^ -o $@
 
 # Utils
 

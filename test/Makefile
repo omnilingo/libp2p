@@ -10,10 +10,10 @@ DEPS = crypto/test_base58.h crypto/test_rsa.h test_mbedtls.h
 OBJS = testit.o ../protobuf/protobuf.o ../protobuf/varint.o ../libp2p.a
 
 %.o: %.c $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS)
+	$(CC) -fPIC -c -o $@ $< $(CFLAGS)
 
 testit_libp2p: $(OBJS) $(DEPS)
-	$(CC) -o $@ $(OBJS) $(LFLAGS) -lp2p -lm -lmultihash -lmultiaddr -lpthread
+	$(CC) -fPIC -o $@ $(OBJS) $(LFLAGS) -lp2p -lm -lmultihash -lmultiaddr -lpthread
 	
 all_others:
 	cd ../crypto; make all;

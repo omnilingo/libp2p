@@ -15,13 +15,13 @@ DEPS = include/multiaddr/base58.h include/multiaddr/endian.h include/multiaddr/m
 OBJS = base58.o varint.o varhexutils.o protoutils.o protocols.o multiaddr.o
 
 %.o: %.c $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS)
+	$(CC) -fPIC -c -o $@ $< $(CFLAGS)
 
 libmultiaddr.a: $(OBJS)
 	ar rcs $@ $^
 
 test_multiaddr: testing.o libmultiaddr.a
-	$(CC) -o $@ $^ $(LFLAGS)
+	$(CC) -fPIC -o $@ $^ $(LFLAGS)
 
 all: test_multiaddr
 

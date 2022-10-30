@@ -10,7 +10,7 @@ DEPS =
 OBJS = frame.o session.o stream.o yamux.o ../os/timespec.o
 
 %.o: %.c
-	$(CC) -c -o $@ $< $(CFLAGS)
+	$(CC) -fPIC -c -o $@ $< $(CFLAGS)
 
 all: $(OBJS)
 
@@ -19,4 +19,4 @@ clean:
 	rm -f test
 
 test: all test.o
-	$(CC) -o test test.o $(OBJS) $(CFLAGS)
+	$(CC) -fPIC -o test test.o $(OBJS) $(CFLAGS)

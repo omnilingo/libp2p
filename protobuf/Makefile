@@ -8,13 +8,13 @@ all: protobuf_reader
 	cd test; make all;
 	
 %.o: %.c $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS)
+	$(CC) -fPIC -c -o $@ $< $(CFLAGS)
 
 protobuf_reader: $(OBJS) main.o
-	$(CC) -o $@ $^ 
+	$(CC) -fPIC -o $@ $^ 
 
 test_protobuf: $(OBJS)
-	$(CC) -o $@ $^ $(LFLAGS)
+	$(CC) -fPIC -o $@ $^ $(LFLAGS)
 
 clean:
 	rm -f *.o

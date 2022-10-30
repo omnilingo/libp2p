@@ -5,7 +5,7 @@ DEPS =
 OBJS = rsa.o sha256.o sha512.o sha1.o key.o peerutils.o ephemeral.o aes.o
 
 %.o: %.c $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS)
+	$(CC) -fPIC -c -o $@ $< $(CFLAGS)
 
 	
 all: $(OBJS)

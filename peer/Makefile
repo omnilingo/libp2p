@@ -5,7 +5,7 @@ DEPS =
 OBJS = peer.o peerstore.o providerstore.o
 
 %.o: %.c $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS)
+	$(CC) -fPIC -c -o $@ $< $(CFLAGS)
 
 	
 all: $(OBJS)

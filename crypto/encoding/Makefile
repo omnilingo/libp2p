@@ -7,7 +7,7 @@ DEPS = ../../include/libp2p/crypto/encoding/base58.h ../../include/libp2p/crypto
 OBJS = base58.o base64.o x509.o base16.o base32.o
 
 %.o: %.c $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS)
+	$(CC) -fPIC -c -o $@ $< $(CFLAGS)
 
 	
 all: $(OBJS)
