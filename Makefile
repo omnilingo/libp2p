@@ -2,6 +2,7 @@
 DEBUG = true
 export DEBUG
 
+SO_LINKER_FLAGS=-L./protobuf/ -L./multiaddr/ -L./multihash/ -lprotobuf -lmultiaddr -lmultihash -lpthread -lm
 LINKER_FLAGS=
 
 OBJS = \
@@ -26,6 +27,7 @@ all: compile link
 
 link: 
 	ar rcs libp2p.a $(OBJS) $(LINKER_FLAGS)
+	gcc -shared $(OBJS) protobuf/protobuf.o protobuf/varint.o -o libp2p.so $(SO_LINKER_FLAGS)
 
 compile:
 	cd multihash; make all;

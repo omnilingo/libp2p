@@ -10,6 +10,9 @@ all: protobuf_reader
 %.o: %.c $(DEPS)
 	$(CC) -fPIC -c -o $@ $< $(CFLAGS)
 
+libprotobuf.so:
+	gcc -shared *.o -o libprotobuf.so
+
 protobuf_reader: $(OBJS) main.o
 	$(CC) -fPIC -o $@ $^ 
 

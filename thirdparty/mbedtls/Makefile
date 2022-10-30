@@ -78,8 +78,8 @@ OBJS_TLS=	debug.o		net_sockets.o		\
 
 .PHONY: all static shared clean
 
-ifndef SHARED
-all: static
+ifndef STATIC
+all: shared 
 else
 all: shared static
 endif
