@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -O0 -I../include -I../../c-protobuf -I../../c-multihash/include -I../../c-multiaddr/include -g3
+CFLAGS = -O0 -I../include -I../protobuf -I../multihash/include -I../multiaddr/include -g3
 LFLAGS =
 DEPS = 
 OBJS = utils.o memstream.o

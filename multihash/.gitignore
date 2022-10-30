@@ -1,0 +1,10 @@
+*
+
+!.gitignore
+!Makefile
+!**/
+
+*.o
+*.a
+.settings/language.settings.xml
+

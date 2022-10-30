@@ -1,0 +1,10 @@
+*
+
+!.gitignore
+!Makefile
+!**/
+
+*.o
+.settings/language.settings.xml
+test_protobuf
+protobuf_reader

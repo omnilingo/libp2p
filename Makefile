@@ -47,7 +47,7 @@ test: compile link
 	
 rebuild: clean all
 	
-all: test
+all: compile test
 	
 clean:
 	cd conn; make clean;

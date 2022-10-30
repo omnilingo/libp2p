@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -O0 -Wall -Werror -I../include -I../../c-protobuf -std=c11
+CFLAGS = -O0 -Wall -Werror -I../include -I../protobuf -std=c11
 
 ifdef DEBUG
 CFLAGS += -g3

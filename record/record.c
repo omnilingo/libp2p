@@ -5,8 +5,8 @@
 #include "libp2p/crypto/sha256.h"
 #include "libp2p/record/record.h"
 #include "protobuf.h"
-#include "mh/hashes.h"
-#include "mh/multihash.h"
+#include "multihash/hashes.h"
+#include "multihash/multihash.h"
 
 
 /**
