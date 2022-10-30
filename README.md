@@ -30,4 +30,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 1
 >>> p2p.libp2p_net_server_stop()
 1
+>>> ma = p2p.multiaddress_new_from_string("/ip4/127.0.0.1/tcp/1234");
+>>> ma.string
+'/ip4/127.0.0.1/tcp/1234'
 ```
